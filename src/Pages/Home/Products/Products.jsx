@@ -13,6 +13,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const [category, setCategory] = useState("");
@@ -73,7 +74,9 @@ const Products = () => {
           {products?.map((product, idx) => (
             <SwiperSlide key={idx}>
               {" "}
-              <SingleProduct product={product}></SingleProduct>
+              <Link to={`/products/${product.id}`}>
+                <SingleProduct product={product}></SingleProduct>
+              </Link>
             </SwiperSlide>
           ))}
         </div>

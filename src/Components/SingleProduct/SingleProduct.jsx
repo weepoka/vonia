@@ -12,7 +12,7 @@ const SingleProduct = ({ product }) => {
     reviews,
   } = product;
   return (
-    <div className="border w-[300px] singleItem relative ">
+    <div className="border w-[280px] singleItem relative ">
       <div className=" p-1">
         <div className=" relative h-[350px]">
           <img src={image} className="h-full w-full object-contain" alt="" />
