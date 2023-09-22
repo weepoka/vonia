@@ -15,6 +15,11 @@ const Navbar = () => {
       subcategories: [],
     },
     {
+      text: "My Account",
+      href: "/myaccount",
+      subcategories: [],
+    },
+    {
       text: "Furniture",
       href: "/furniture",
       subcategories: [
