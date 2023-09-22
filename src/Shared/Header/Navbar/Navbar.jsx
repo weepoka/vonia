@@ -10,6 +10,11 @@ const Navbar = () => {
       subcategories: [],
     },
     {
+      text: "Contact",
+      href: "/contact",
+      subcategories: [],
+    },
+    {
       text: "Furniture",
       href: "/furniture",
       subcategories: [
