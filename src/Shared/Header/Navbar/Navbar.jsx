@@ -20,6 +20,11 @@ const Navbar = () => {
       subcategories: [],
     },
     {
+      text: "Checkout",
+      href: "/checkout",
+      subcategories: [],
+    },
+    {
       text: "Furniture",
       href: "/furniture",
       subcategories: [
