@@ -83,7 +83,7 @@ const Checkout = () => {
               </div>
             </div>
             <div className="w-[50%] ">
-              <div className=" bg-gray-100 px-4 py-6 ">
+              <div className=" bg-gray-100 px-8 py-6 ">
                 {" "}
                 <h1 className="uppercase text-[34px] text-gray-500 py-3 border-b-2 border-gray-200">
                   {" "}

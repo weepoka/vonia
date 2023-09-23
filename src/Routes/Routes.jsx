@@ -6,11 +6,13 @@ import Shop from "../Pages/Shop/Shop";
 import Contact from "../Pages/Contact/Contact";
 import MyAccount from "../Pages/MyAccount/MyAccount";
 import Checkout from "../Pages/Checkout/Checkout";
+import ErorrElement from "../Pages/ErorrElement/ErorrElement";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <ErorrElement />,
     children: [
       {
         path: "/",
