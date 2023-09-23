@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import logo from "../../../assets/Vonia logo.webp";
+import { Link } from "react-router-dom";
 const MainHeader = () => {
   return (
     <div className="w-[83%] my-14 text-center mx-auto flex justify-around items-center gap-40">
@@ -21,9 +22,12 @@ const MainHeader = () => {
       </div>
       <div className=" text-center">
         <div className="flex items-center gap-2">
-          <span className="text-3xl">
-            <Icon icon="fluent:cart-20-regular" />
-          </span>{" "}
+          <Link to="/cart">
+            {" "}
+            <span className="text-3xl">
+              <Icon icon="fluent:cart-20-regular" />
+            </span>{" "}
+          </Link>
           <h1>Cart2Items</h1>
         </div>
       </div>
