@@ -8,6 +8,7 @@ import MyAccount from "../Pages/MyAccount/MyAccount";
 import Checkout from "../Pages/Checkout/Checkout";
 import ErorrElement from "../Pages/ErorrElement/ErorrElement";
 import Cart from "../Pages/Cart/Cart";
+import Wishlist from "../Pages/Wishlist/Wishlist";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/wishlist",
+        element: <Wishlist></Wishlist>,
       },
       {
         path: "/checkout",
