@@ -66,13 +66,13 @@ Takes two numbers and returns the sum.
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`DATABASE_URL`=mongodb+srv://logitech-db:hdRFNJfgTTYX1e2u@cluster0.xkzvtbc.mongodb.net/logitech-db?retryWrites=true&w=majority
+`DATABASE_URL`=mongodb+srv://vonia:UtdHhb2n7toVspwv@cluster0.wtplt1z.mongodb.net/vonia?retryWrites=true&w=majority
 
 `NODE_ENV`=development
 
-`MAIL_PASSWORD`=xqazhqahfsutwaqb
+`MAIL_PASSWORD`=
 
-`EMAIL`=globalitpark2021@gmail.com
+`EMAIL`=
 
 `APP_UR`L=http://localhost:5000
 
@@ -80,11 +80,11 @@ To run this project, you will need to add the following environment variables to
 
 `REACT_APP_LOGIN_URL`=
 
-`GOOGLE_CLIENT_ID`=167373504852-3h3kbcaib89qel88sv00e1ggic2rvisg.apps.googleusercontent.com
-GOOGLE_CLIENT_SECRET=
+`GOOGLE_CLIENT_ID`=
+`GOOGLE_CLIENT_SECRET`=
 
 `FACEBOOK_CLIENT_ID`=
-FACEBOOK_CLIENT_SECRET=
+`FACEBOOK_CLIENT_SECRET`=
 
 `ACCESS_TOKEN_SECRET`=
 
@@ -102,7 +102,7 @@ I'm a full stack developer. As a proficient MERN Stack Project Leader, I orchest
 
 ## ⚙️ Tech Stack
 
-**Client:** React, Redux, TailwindCSS
+**Client:** ReactVite, Redux, TailwindCSS
 
 **Server:** Node, Express, mongoDB
 
