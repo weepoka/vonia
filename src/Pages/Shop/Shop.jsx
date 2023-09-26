@@ -6,8 +6,10 @@ import shopBanner from "../../assets/bedding.webp";
 import SingleProduct from "../../Components/SingleProduct/SingleProduct";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
+import SingleLandscapeView from "./SingleLandscapeView.jsx/SingleLandscapeView";
 
 const Shop = () => {
+  const [showByView, setshowByView] = useState("gridview");
   const [value, setValue] = useState(50); // Initial value
   const [products, setProducts] = useState([]);
 
@@ -102,13 +104,20 @@ const Shop = () => {
                 <p>There are 13 products</p>
               </div>
               <div className="flex justify-between items-center gap-3 my-5 p-3 border border-gray-500">
-                <div className="flex items-center gap-1">
-                  <Icon icon="ic:baseline-window" />
-                  <Icon icon="uis:chart" />
+                <div className="flex items-center gap-1 text-[20px]">
+                  <Icon
+                    icon="ic:baseline-window"
+                    onClick={() => setshowByView("gridview")}
+                  />{" "}
+                  <Icon
+                    icon="ic:baseline-list"
+                    onClick={() => setshowByView("landscapeview")}
+                    className="text-[30px]"
+                  />
                 </div>
                 <div className="flex items-center gap-1">
                   <span>sort By</span>
-                  <select name="" id="">
+                  <select name="" id="" className="border">
                     <option value="">--</option>
                     <option value="">Price: Lowest First</option>
                     <option value="">Price: Higest First</option>
@@ -130,12 +139,27 @@ const Shop = () => {
                 </button>
               </div>
             </div>
-            <div className="grid grid-cols-3 gap-4">
-              {products?.map((product, idx) => (
-                <Link key={idx} to={`/products/${product.id}`}>
-                  <SingleProduct product={product}></SingleProduct>
-                </Link>
-              ))}
+            <div>
+              {showByView == "gridview" && (
+                <div className="grid grid-cols-3 gap-4">
+                  {products?.map((product, idx) => (
+                    <Link key={idx} to={`/products/${product.id}`}>
+                      <SingleProduct product={product}></SingleProduct>
+                    </Link>
+                  ))}
+                </div>
+              )}
+              {showByView == "landscapeview" && (
+                <div className="flex flex-col gap-6">
+                  {products?.map((product, idx) => (
+                    <Link key={idx} to={`/products/${product.id}`}>
+                      <SingleLandscapeView
+                        product={product}
+                      ></SingleLandscapeView>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
             <div className="flex gap-2 items-center mt-3">
               <span className="p-2 border">
