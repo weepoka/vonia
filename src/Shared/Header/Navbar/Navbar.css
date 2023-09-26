@@ -1,0 +1,29 @@
+/* Navbar.css */
+.subcategories {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+  background-color: white;
+  visibility: hidden;
+  z-index: 999;
+  transform: scaleY(0);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+
+.subcategory {
+  background-color: white;
+  padding: 10px;
+  /* border: 1px solid #ccc; */
+  /* border-radius: 4px; */
+}
+
+.group:hover .subcategories {
+  opacity: 1;
+  visibility: visible;
+  transform: scaleY(1);
+}
+
+.group:hover .subcategory {
+  visibility: visible;
+}

@@ -1,0 +1,35 @@
+.swiper-slide {
+  /* text-align: center; */
+  font-size: 18px;
+  /* background: lightblue; */
+  height: calc((100% - 30px) / 2) !important;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiperMainDiv {
+  transition: all 0.1s;
+}
+
+.swiper .swiper-button-prev,
+.swiper-button-next {
+  padding: 25px;
+  font-size: 5px;
+  background-color: gray;
+  opacity: 0;
+  visibility: hidden;
+}
+.swiper:hover .swiper-button-prev {
+  color: white;
+  opacity: 1;
+  font-size: 5px !important;
+  visibility: visible;
+}
+.swiper:hover .swiper-button-next {
+  color: white;
+  opacity: 1;
+  font-size: 5px !important;
+  visibility: visible;
+}
