@@ -1,0 +1,26 @@
+.animateUl {
+  /* transform: scale(0); */
+  /* transform-origin: 0cm 2px; */
+  background-color: red;
+  /* transition: all 0.5s ease 0s; */
+}
+
+.groupeCountry {
+  position: relative;
+  /* overflow: hidden; */
+}
+.subCountry {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  /* transform: translateY(-64px); */
+  transform: scaleY(0); /* Initially scaled down vertically */
+  transform-origin: top; /* Scale from the top */
+  transition: transform 0.4s ease;
+}
+.groupeCountry:hover .subCountry {
+  /* transform: translateY(64px); */
+  transform: scaleY(1);
+  /* z-index: 20; */
+}
