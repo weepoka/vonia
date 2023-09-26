@@ -10,18 +10,52 @@ import SingleLandscapeView from "./SingleLandscapeView.jsx/SingleLandscapeView";
 
 const Shop = () => {
   const [showByView, setshowByView] = useState("gridview");
-  const [value, setValue] = useState(50); // Initial value
+  const [price, setPrice] = useState(50); // Initial value
   const [products, setProducts] = useState([]);
+  const [color, setColor] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   const handleSliderChange = (event) => {
-    setValue(event.target.value);
+    const inputPrice = event.target.value;
+    setPrice(inputPrice);
+    const filterdByPrice = products?.filter(
+      (item) => item.regular_price <= inputPrice
+    );
+    setFilteredProducts(filterdByPrice);
   };
+
+  const colors = [
+    { color: "bg-orange-600", name: "orange" },
+    { color: "bg-pink-600", name: "pink" },
+    { color: "bg-black", name: "black" },
+    { color: "bg-blue-600", name: "blue" },
+    { color: "bg-sky-600", name: "sky" },
+    { color: "bg-red-600", name: "red" },
+    { color: "bg-gray-600", name: "gray" },
+    { color: "bg-indigo-600", name: "indigo" },
+    { color: "bg-yellow-600", name: "yellow" },
+    { color: "bg-green-600", name: "green" },
+    { color: "bg-black", name: "black" },
+  ];
 
   useEffect(() => {
     fetch("products.json")
       .then((res) => res.json())
-      .then((data) => setProducts(data));
+      .then((data) => {
+        setProducts(data);
+        setFilteredProducts(data);
+      });
   }, []);
+
+  useEffect(() => {
+    const filtered = products?.filter((product) => product.color == color);
+
+    if (filtered.length === 0) {
+      return setFilteredProducts(products);
+    }
+    setFilteredProducts(filtered);
+  }, [color]);
+
   return (
     <div className="w-10/12 mx-auto  mt-5">
       <div className="flex gap-4 items-center mb-5">
@@ -29,68 +63,120 @@ const Shop = () => {
         <Icon icon="ic:baseline-greater-than" /> <span>Shop</span>
       </div>
       <div className="flex gap-5">
-        <div className="w-[30%] bg-gray-200 p-5">
-          <h1 className="pb-5 border-b-2 pl-3 font-bold mt-4 border-gray-400 uppercase">
-            Catalog
-          </h1>
-          <div className="ml-3">
-            <h2 className="mt-4 uppercase border-b-2 font-semibold max-w-max border-gray-400 pb-1">
-              Categories
-            </h2>
-            <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
-              Bags <span>(14)</span>
-            </p>
-            <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
-              Top & fees <span>(14)</span>
-            </p>
-            <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
-              Lingiries <span>(14)</span>
-            </p>
+        <div className="w-[30%]  ">
+          <div className="bg-gray-200 p-5 mb-5">
+            <h1 className="pb-5 border-b-2 pl-3 font-bold mt-4 border-gray-400 uppercase">
+              Catalog
+            </h1>
+            <div className="ml-3">
+              <h2 className="mt-4 uppercase border-b-2 font-semibold max-w-max border-gray-400 pb-1">
+                Categories
+              </h2>
+              <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
+                Bags <span>(14)</span>
+              </p>
+              <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
+                Top & fees <span>(14)</span>
+              </p>
+              <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
+                Lingiries <span>(14)</span>
+              </p>
+            </div>
+            <div className="ml-3">
+              {" "}
+              <h2 className="mt-4 uppercase border-b-2 font-semibold max-w-max border-gray-400 pb-1">
+                Price
+              </h2>
+              <input
+                type="range"
+                min={60}
+                max={10000}
+                value={price}
+                onChange={handleSliderChange}
+                className="slider mt-5 w-full"
+              />
+              <p className="text-orange-500 font-bold"> £60 - £{price}</p>
+            </div>
+            <div className="ml-3">
+              {" "}
+              <h2 className="mt-4 uppercase border-b-2 font-semibold max-w-max border-gray-400 pb-1">
+                Color
+              </h2>
+              <div className="grid grid-cols-10 my-4 gap-2">
+                {colors?.map((color, indx) => (
+                  <span
+                    key={indx}
+                    className={`inline-block p-2  ${color?.color}`}
+                    onClick={() => setColor(color.name)}
+                  ></span>
+                ))}
+              </div>
+            </div>
+            <div className="ml-3">
+              <h2 className="mt-4 uppercase border-b-2 font-semibold max-w-max border-gray-400 pb-1">
+                Availibility
+              </h2>
+              <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
+                In Stock <span>(14)</span>
+              </p>
+            </div>
+            <div className="ml-3">
+              <h2 className="mt-4 uppercase border-b-2 font-semibold max-w-max border-gray-400 pb-1">
+                Condition
+              </h2>
+              <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
+                New<span>(14)</span>
+              </p>
+            </div>
+            <div className="ml-3">
+              <h2 className="mt-4 uppercase border-b-2 font-semibold max-w-max border-gray-400 pb-1">
+                Manufacture
+              </h2>
+              <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
+                Fashion menufacturer <span>(14)</span>
+              </p>
+              <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
+                Adidas <span>(14)</span>
+              </p>
+              <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
+                Chanel <span>(14)</span>
+              </p>
+              <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
+                Dkny<span>(14)</span>
+              </p>
+              <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
+                Dolce <span>(14)</span>
+              </p>
+            </div>
           </div>
-          <input
-            type="range"
-            min={0}
-            max={10000}
-            value={value}
-            onChange={handleSliderChange}
-            className="slider mt-5 w-full"
-          />
-          <p>Value: ${value}</p>
-          <div className="ml-3">
-            <h2 className="mt-4 uppercase border-b-2 font-semibold max-w-max border-gray-400 pb-1">
-              Availibility
-            </h2>
-            <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
-              In Stock <span>(14)</span>
-            </p>
-          </div>
-          <div className="ml-3">
-            <h2 className="mt-4 uppercase border-b-2 font-semibold max-w-max border-gray-400 pb-1">
-              Condition
-            </h2>
-            <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
-              New<span>(14)</span>
-            </p>
-          </div>
-          <div className="ml-3">
-            <h2 className="mt-4 uppercase border-b-2 font-semibold max-w-max border-gray-400 pb-1">
-              Manufacture
-            </h2>
-            <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
-              Fashion menufacturer <span>(14)</span>
-            </p>
-            <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
-              Adidas <span>(14)</span>
-            </p>
-            <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
-              Chanel <span>(14)</span>
-            </p>
-            <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
-              Dkny<span>(14)</span>
-            </p>
-            <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
-              Dolce <span>(14)</span>
-            </p>
+          <div className="bg-gray-200 p-5">
+            <h1 className="font-bold mb-3">Tags</h1>
+            <div className="flex flex-wrap gap-6">
+              <button className="p-3 border border-gray-500  hover:border-orange-500 hover:text-orange-500">
+                {" "}
+                New
+              </button>
+              <button className="p-3 border border-gray-500  hover:border-orange-500 hover:text-orange-500">
+                {" "}
+                Fashion
+              </button>
+              <button className="p-3 border border-gray-500  hover:border-orange-500 hover:text-orange-500">
+                {" "}
+                Furniture
+              </button>
+              <button className="p-3 border border-gray-500  hover:border-orange-500 hover:text-orange-500">
+                {" "}
+                Sale
+              </button>
+              <button className="p-3 border border-gray-500  hover:border-orange-500 hover:text-orange-500">
+                {" "}
+                Accessories
+              </button>
+              <button className="p-3 border border-gray-500  hover:border-orange-500 hover:text-orange-500">
+                {" "}
+                Lighting
+              </button>
+            </div>
           </div>
         </div>
         <div className="w-[70%]">
@@ -140,16 +226,27 @@ const Shop = () => {
               </div>
             </div>
             <div>
-              {showByView == "gridview" && (
-                <div className="grid grid-cols-3 gap-4">
-                  {products?.map((product, idx) => (
-                    <Link key={idx} to={`/products/${product.id}`}>
+              <div
+                className={`${
+                  showByView == "gridview"
+                    ? "grid grid-cols-3 gap-4"
+                    : "flex flex-col gap-6"
+                }`}
+              >
+                {filteredProducts?.map((product, idx) => (
+                  <Link key={idx} to={`/products/${product.id}`}>
+                    {showByView == "gridview" ? (
                       <SingleProduct product={product}></SingleProduct>
-                    </Link>
-                  ))}
-                </div>
-              )}
-              {showByView == "landscapeview" && (
+                    ) : (
+                      <SingleLandscapeView
+                        product={product}
+                      ></SingleLandscapeView>
+                    )}
+                  </Link>
+                ))}
+              </div>
+
+              {/* {showByView == "landscapeview" && (
                 <div className="flex flex-col gap-6">
                   {products?.map((product, idx) => (
                     <Link key={idx} to={`/products/${product.id}`}>
@@ -159,7 +256,7 @@ const Shop = () => {
                     </Link>
                   ))}
                 </div>
-              )}
+              )} */}
             </div>
             <div className="flex gap-2 items-center mt-3">
               <span className="p-2 border">
