@@ -1,0 +1,46 @@
+.hoverAnimation::before {
+  content: "";
+  position: absolute;
+  width: 2%;
+  background: rgba(255, 255, 255, 0.2) none repeat scroll 0 0;
+  height: 100%;
+  left: 49%;
+  /* right: 35%; */
+  opacity: 1;
+
+  visibility: hidden;
+}
+
+.hoverAnimation::after {
+  content: "";
+  position: absolute;
+  top: 49%;
+  height: 2%;
+  opacity: 1;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2) none repeat scroll 0 0;
+  /* height: 100%; */
+  /* left: 35%; */
+  /* right: 35%; */
+
+  visibility: hidden;
+}
+
+.hoverAnimation:hover::before {
+  width: 100%;
+  left: 0;
+  opacity: 0;
+  transition: width 1.5s, left 1.5s, opacity 1s;
+  /* transition: all 3s; */
+  /* right: 0; */
+  visibility: visible;
+}
+.hoverAnimation:hover::after {
+  height: 100%;
+  top: 0;
+  opacity: 0;
+  transition: height 1.5s, top 1.5s, opacity 1s;
+  /* transition: all 3s; */
+  /* right: 0; */
+  visibility: visible;
+}

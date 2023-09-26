@@ -29,9 +29,22 @@ const Reviews = () => {
   ];
 
   const contentList = Reviews.map((item) => (
-    <div className="bg-blue-300 p-4 rounded-lg" key={item.id}>
-      <h1>{item.name}</h1>
-      <p>{item.message}</p>
+    <div
+      className=" py-4 px-44 flex gap-24 rounded-lg text-white mt-5"
+      key={item.id}
+    >
+      <div className="flex  items-center gap-5">
+        <div>
+          <img src={item.image} alt="" />
+        </div>
+        <div className="border-b-2 border-white pb-4">
+          <p>{item.name}</p>
+          <p>{item?.email}</p>
+        </div>
+      </div>
+      <div>
+        <p>{item?.message}</p>
+      </div>
     </div>
   ));
 
@@ -51,21 +64,24 @@ const Reviews = () => {
 
   return (
     <div
-      className={`bg_reviwes  bg-cover bg-center relative  p-4`}
+      className={`bg_reviwes  bg-cover bg-center relative my-10 p-4 h-[210px]`}
       style={{ backgroundImage: `url(${bgImg})` }}
     >
-      <div className="flex items-center mb-4">
-        {contentList.map((_, index) => (
-          <button
-            key={index}
-            className={`mr-2 p-2 rounded-full focus:outline-none ${
-              index === currentIndex ? "bg-blue-400" : "bg-gray-300"
-            }`}
-            onClick={() => handleClick(index)}
-          ></button>
-        ))}
-      </div>
       {contentList[currentIndex]}
+      <div className="flex justify-center">
+        <div className="flex items-center mb-4 -ml-60">
+          {contentList.map((_, index) => (
+            <button
+              key={index}
+              className={`mr-2    p-2 rounded-full  ${
+                currentIndex == index ? "bg-gray-500" : "bg-gray-400 "
+              } 
+        }`}
+              onClick={() => handleClick(index)}
+            ></button>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

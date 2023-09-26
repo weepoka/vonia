@@ -22,6 +22,10 @@ const Shop = () => {
   }, []);
   return (
     <div className="w-10/12 mx-auto  mt-5">
+      <div className="flex gap-4 items-center mb-5">
+        <Icon icon="ion:home-sharp" className="hover:text-pink-500" />{" "}
+        <Icon icon="ic:baseline-greater-than" /> <span>Shop</span>
+      </div>
       <div className="flex gap-5">
         <div className="w-[30%] bg-gray-200 p-5">
           <h1 className="pb-5 border-b-2 pl-3 font-bold mt-4 border-gray-400 uppercase">
@@ -132,6 +136,16 @@ const Shop = () => {
                   <SingleProduct product={product}></SingleProduct>
                 </Link>
               ))}
+            </div>
+            <div className="flex gap-2 items-center mt-3">
+              <span className="p-2 border">
+                <Icon icon="ic:baseline-less-than" />
+              </span>
+              <span className="p-2 border">1</span>
+              <span className="p-2 border">2</span>
+              <span className="p-2 border">
+                <Icon icon="ic:baseline-greater-than" />
+              </span>
             </div>
           </div>
         </div>

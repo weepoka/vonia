@@ -6,6 +6,10 @@ import twitterIcon from "@iconify/icons-openmoji/twitter";
 import ImageGallery from "react-image-gallery";
 import { useParams } from "react-router-dom";
 import "react-image-gallery/styles/css/image-gallery.css";
+import "./ProductDetails.css";
+import Acceseiries from "./Acceseiries/Acceseiries";
+import SameCategory from "./SameCategory/SameCategory";
+import App from "./Moredetails/Moredetails";
 
 const ProductDetails = () => {
   const [product, setProduct] = useState({});
@@ -22,35 +26,50 @@ const ProductDetails = () => {
     {
       original: "https://picsum.photos/id/1018/1000/600/",
       thumbnail: "https://picsum.photos/id/1018/250/150/",
+      thumbnailHeight: "700px",
+      originalHeight: "700px",
     },
     {
       original: "https://picsum.photos/id/1015/1000/600/",
       thumbnail: "https://picsum.photos/id/1015/250/150/",
+      thumbnailHeight: "700px",
+      originalHeight: "700px",
     },
     {
       original: "https://picsum.photos/id/1019/1000/600/",
       thumbnail: "https://picsum.photos/id/1019/250/150/",
+      thumbnailHeight: "700px",
+      originalHeight: "700px",
     },
     {
       original: "https://picsum.photos/id/1019/1000/600/",
       thumbnail: "https://picsum.photos/id/1019/250/150/",
+      thumbnailHeight: 700,
+      originalHeight: "700px",
     },
   ];
   console.log(product);
   return (
     <div className="w-10/12 mx-auto">
+      <div className="flex gap-4 items-center my-5 ">
+        <Icon icon="ion:home-sharp" className="hover:text-pink-500" />{" "}
+        <Icon icon="ic:baseline-greater-than" /> <span>Furniture</span>{" "}
+        <Icon icon="ic:baseline-greater-than" /> <span>{product?.title}</span>
+      </div>
       <div className="flex gap-5 my-5">
         <div className="w-[40%]">
-          <ImageGallery
-            showPlayButton={false}
-            slideOnThumbnailOver={true}
-            showFullscreenButton={false}
-            slideDuration={50}
-            items={images}
-            className={"h-[700px]"}
-            thumbnailPosition={"left"}
-            showNav={false}
-          ></ImageGallery>
+          <div className="h-[700px]">
+            <ImageGallery
+              showPlayButton={false}
+              slideOnThumbnailOver={true}
+              showFullscreenButton={false}
+              slideDuration={50}
+              className="w-full h-full"
+              items={images}
+              thumbnailPosition={"left"}
+              showNav={false}
+            ></ImageGallery>
+          </div>
         </div>
         <div className="w-[60%]">
           <h2 className="text-[30px] font-semibold pb-3">
@@ -186,6 +205,15 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <App></App>
+      </div>
+      <div>
+        <Acceseiries></Acceseiries>
+      </div>
+      <div>
+        <SameCategory></SameCategory>
       </div>
     </div>
   );

@@ -21,12 +21,16 @@ const SpecialLook = () => {
         </div>
       </div>
       <div className="flex">
-        <div>
+        <div className="relative hoverAnimation">
           <img src={SpecialLook1} alt="" />
         </div>
         <div>
-          <img src={SpecialLook2} alt="" />
-          <img src={SpecialLook3} alt="" />
+          <div className="relative hoverAnimation">
+            <img src={SpecialLook2} alt="" />
+          </div>
+          <div className="relative hoverAnimation">
+            <img src={SpecialLook3} alt="" />
+          </div>
         </div>
       </div>
     </div>

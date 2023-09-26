@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import Button from "../../Components/Button/Button";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -23,6 +24,10 @@ const Cart = () => {
   }, []);
   return (
     <div className="w-10/12 mx-auto">
+      <div className="flex gap-4 items-center mb-5">
+        <Icon icon="ion:home-sharp" className="hover:text-pink-500" />{" "}
+        <Icon icon="ic:baseline-greater-than" /> <span>cart</span>
+      </div>
       <div>
         <h1 className="uppercase font-bold py-3 border-b-2 border-gray-100">
           {" "}
@@ -118,7 +123,10 @@ const Cart = () => {
               </div>
               <div className="text-end uppercase  border-b-2 ">
                 {" "}
-                <Button>Procced to Checkout</Button>
+                <Link to="/checkout">
+                  {" "}
+                  <Button>Procced to Checkout</Button>
+                </Link>
               </div>
             </div>
           </div>

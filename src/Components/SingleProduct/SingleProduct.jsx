@@ -12,10 +12,14 @@ const SingleProduct = ({ product }) => {
     reviews,
   } = product;
   return (
-    <div className="border w-[280px] singleItem relative ">
+    <div className=" w-[280px] singleItem relative ">
       <div className=" p-1">
         <div className=" relative h-[350px]">
-          <img src={image} className="h-full w-full object-contain" alt="" />
+          <img
+            src={image}
+            className="h-full w-full object-contain p-5"
+            alt=""
+          />
           <div className="overlay"></div>
         </div>
         <div>
@@ -45,16 +49,16 @@ const SingleProduct = ({ product }) => {
         </div>
       </div>
       <div className="w-[60%] showDiv mx-auto absolute top-[50%] left-[20%] text-center">
-        <div className="flex gap-3 w-[100%] text-center justify-between items-center">
-          <h1 className="border-2 px-4 py-3 border-white bg-transparent hover:bg-[#c06b81] text-white">
+        <div className="flex gap-2 w-[100%] text-center justify-between items-center">
+          <span className="border-2 px-3 py-2 border-white bg-transparent hover:bg-[#c06b81] text-white">
             <Icon icon="ion:cart-outline" />
-          </h1>
-          <h1 className="border-2 px-4 py-3 border-white bg-transparent hover:bg-[#c06b81] text-white">
+          </span>
+          <span className="border-2 px-3 py-2 border-white bg-transparent hover:bg-[#c06b81] text-white">
             <Icon icon="iconamoon:heart-fill" />
-          </h1>
-          <h1 className="border-2 px-4 py-3 border-white bg-transparent hover:bg-[#c06b81] text-white">
+          </span>
+          <span className="border-2 px-3 py-2 border-white bg-transparent hover:bg-[#c06b81] text-white">
             <Icon icon="pajamas:chart" />
-          </h1>
+          </span>
         </div>
         <button className="uppercase mt-2 w-[100%] font-bold px-4 py-2 bg-white text-black hover:bg-[#c06b81] hover:text-white">
           Quick View

@@ -10,26 +10,6 @@ const Navbar = () => {
       subcategories: [],
     },
     {
-      text: "Contact",
-      href: "/contact",
-      subcategories: [],
-    },
-    {
-      text: "WishList",
-      href: "/wishlist",
-      subcategories: [],
-    },
-    {
-      text: "My Account",
-      href: "/myaccount",
-      subcategories: [],
-    },
-    {
-      text: "Checkout",
-      href: "/checkout",
-      subcategories: [],
-    },
-    {
       text: "Furniture",
       href: "/furniture",
       subcategories: [
@@ -112,15 +92,15 @@ const Navbar = () => {
     <nav className="mainMenu w-[70%] mx-auto">
       <ul className="flex gap-5 justify-around">
         {links.map((link, idx) => (
-          <li className="group relative" key={idx}>
+          <li className="groupeCountry " key={idx}>
             <Link className="uppercase" to={link.href}>
               {link.text}
             </Link>
-            <div className="subcategories flex w-[400px] shadow-2xl justify-between">
+            <div className="subCountry z-20 bg-white  flex w-[400px] shadow-2xl justify-between">
               {link.subcategories.map((item, subIdx) => (
-                <div className="subcategory" key={subIdx}>
-                  <h1>{item.text}</h1>
-                  <div>
+                <div className="subcategory p-7 " key={subIdx}>
+                  <h1 className="font-semibold mb-2 text-black">{item.text}</h1>
+                  <div className="flex flex-col gap-2">
                     {item.items.map((subItem, subItemIdx) => (
                       <p key={subItemIdx}>{subItem}</p>
                     ))}

@@ -26,7 +26,7 @@ const Brand = () => {
       mousewheel={true}
       keyboard={true}
       modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-      className="mySwiper w-10/12 mx-auto"
+      className="mySwiper w-10/12 mx-auto my-10"
       slidesPerView={5}
       spaceBetween={20}
       // pagination={{

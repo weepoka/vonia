@@ -11,7 +11,10 @@ const Checkout = () => {
   };
   return (
     <div className="w-10/12 mx-auto">
-      {" "}
+      <div className="flex gap-4 items-center my-5">
+        <Icon icon="ion:home-sharp" className="hover:text-pink-500" />{" "}
+        <Icon icon="ic:baseline-greater-than" /> <span>Checkout</span>
+      </div>{" "}
       <div>
         {" "}
         <h1 className="uppercase font-bold py-3 border-b-2 border-gray-100">

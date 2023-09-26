@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
+// import "swiper/swiper-bundle.min.css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
@@ -57,30 +58,34 @@ const Products = () => {
           </span>
         </div>
       </div>
-      <Swiper
-        cssMode={true}
-        navigation={true}
-        mousewheel={true}
-        keyboard={true}
-        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-        className="mySwiper "
-        slidesPerView={4}
-        spaceBetween={20}
-        // pagination={{
-        //   clickable: true,
-        // }}
-      >
-        <div className="grid grid-cols-4 swiperMainDiv">
-          {products?.map((product, idx) => (
-            <SwiperSlide key={idx}>
-              {" "}
-              <Link to={`/products/${product.id}`}>
-                <SingleProduct product={product}></SingleProduct>
-              </Link>
-            </SwiperSlide>
-          ))}
-        </div>
-      </Swiper>
+      <div className="swiperMainDiv ">
+        <Swiper
+          cssMode={true}
+          navigation={true}
+          mousewheel={true}
+          keyboard={true}
+          modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+          className="mySwiper py-12 border-b-[1px] border-[#e5e5e5]"
+          slidesPerView={4}
+          // slidesPerColumn={2}
+          // slidesPerGroup={2}
+          spaceBetween={20}
+          // pagination={{
+          //   clickable: true,
+          // }}
+        >
+          <div>
+            {products?.map((product, idx) => (
+              <SwiperSlide key={idx}>
+                {" "}
+                <Link to={`/products/${product.id}`}>
+                  <SingleProduct product={product}></SingleProduct>
+                </Link>
+              </SwiperSlide>
+            ))}
+          </div>
+        </Swiper>
+      </div>
     </div>
   );
 };

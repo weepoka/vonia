@@ -3,6 +3,10 @@ import { Icon } from "@iconify/react";
 const Contact = () => {
   return (
     <div className="w-10/12 mx-auto py-6">
+      <div className="flex gap-4 items-center mb-5">
+        <Icon icon="ion:home-sharp" className="hover:text-pink-500" />{" "}
+        <Icon icon="ic:baseline-greater-than" /> <span>contact</span>
+      </div>
       <div>
         <h1 className="uppercase font-bold py-3 border-b-2 border-gray-100">
           {" "}

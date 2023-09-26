@@ -3,6 +3,7 @@ import sideBanner2 from "../../../assets/sidebanner2.webp";
 import banner from "../../../assets/banner1.webp";
 import productBanner1 from "../../../assets/productBanner1.webp";
 import productBanner2 from "../../../assets/productBanner2.webp";
+import "./Banner.css";
 const Banner = () => {
   return (
     <div className="w-10/12 mx-auto flex gap-7 mt-16">
@@ -28,7 +29,7 @@ const Banner = () => {
         </div>
         <div className="flex gap-3 justify-around">
           <div className="relative">
-            <div>
+            <div className="relative hoverAnimation">
               <img src={productBanner1} className="w-full h-full" alt="" />
             </div>
             <div className="absolute flex-col  pl-8 my-8 top-0 ">
@@ -45,7 +46,7 @@ const Banner = () => {
             </div>
           </div>
           <div className="relative">
-            <div>
+            <div className="relative hoverAnimation">
               <img src={productBanner2} className="w-full h-full" alt="" />
             </div>
             <div className="absolute flex-col  pl-8 my-8 top-0 ">
@@ -64,16 +65,23 @@ const Banner = () => {
         </div>
       </div>
       <div className="w-[30%]">
-        <img
-          className="w-full object-cover h-[500px]"
-          src={sideBanner1}
-          alt=""
-        />
-        <img
-          className="w-full  object-cover h-[500px]"
-          src={sideBanner2}
-          alt=""
-        />
+        <div className=" cursor-pointer mainAnimationDiv">
+          <div href="" className="relative hoverAnimation w-full">
+            {" "}
+            <img
+              className="w-full  object-cover h-[500px]"
+              src={sideBanner1}
+              alt=""
+            />
+          </div>
+        </div>
+        <div href="" className="relative hoverAnimation">
+          <img
+            className="w-full  object-cover h-[500px]"
+            src={sideBanner2}
+            alt=""
+          />
+        </div>
       </div>
     </div>
   );
