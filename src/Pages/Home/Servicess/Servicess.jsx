@@ -25,9 +25,12 @@ const Servicess = () => {
   ];
   return (
     <div className="w-10/12 mx-auto mt-9">
-      <div className="flex justify-between gap-6">
+      <div className="md:flex justify-between gap-6">
         {services?.map((service, idx) => (
-          <div key={idx} className="imgHoverEffectDiv text-center border p-6">
+          <div
+            key={idx}
+            className="imgHoverEffectDiv text-center border p-6 mb-4"
+          >
             <img className="mx-auto " src={service.image} alt="" />
             <h1 className="mt-5"> {service.title}</h1>
             <p className="mt-5">{service.descripton}</p>

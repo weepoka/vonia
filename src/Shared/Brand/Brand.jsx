@@ -17,8 +17,37 @@ import brand3 from "../../assets/brand3.webp";
 import brand4 from "../../assets/brand4.webp";
 import brand5 from "../../assets/brand5.webp";
 import brand6 from "../../assets/brand6.webp";
+import { useEffect, useState } from "react";
 
 const Brand = () => {
+  const [slidesPerView, setSlidesPerView] = useState(4);
+  useEffect(() => {
+    const updateSlidesPerView = () => {
+      const screenWidth = window.innerWidth;
+
+      if (screenWidth <= 576) {
+        // Small devices
+        setSlidesPerView(1);
+      } else if (screenWidth <= 1024) {
+        // Medium devices
+        setSlidesPerView(3);
+      } else {
+        // Large devices
+        setSlidesPerView(5);
+      }
+    };
+
+    // Initial call to set initial slidesPerView
+    updateSlidesPerView();
+
+    // Listen to window resize events and update slidesPerView accordingly
+    window.addEventListener("resize", updateSlidesPerView);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", updateSlidesPerView);
+    };
+  }, []);
   return (
     <Swiper
       cssMode={true}
@@ -27,7 +56,7 @@ const Brand = () => {
       keyboard={true}
       modules={[Navigation, Pagination, Mousewheel, Keyboard]}
       className="mySwiper w-10/12 mx-auto my-10"
-      slidesPerView={5}
+      slidesPerView={slidesPerView}
       spaceBetween={20}
       // pagination={{
       //   clickable: true,

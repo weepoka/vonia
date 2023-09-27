@@ -24,6 +24,35 @@ const Shop = () => {
     setFilteredProducts(filterdByPrice);
   };
 
+  const handleSort = (e) => {
+    const sortValue = e.target.value;
+    console.log(sortValue);
+
+    if (sortValue === "lowest") {
+      const sortedProducts = [...products]?.sort(
+        (a, b) => a.regular_price - b.regular_price
+      );
+      setFilteredProducts(sortedProducts);
+    } else if (sortValue === "highest") {
+      const sortedProducts = [...products]?.sort(
+        (a, b) => b.regular_price - a.regular_price
+      );
+      setFilteredProducts(sortedProducts);
+    } else if (sortValue === "ascending") {
+      const sortedProducts = [...products]?.sort((a, b) =>
+        a.title.localeCompare(b.title)
+      );
+      setFilteredProducts(sortedProducts);
+    } else if (sortValue === "instock") {
+      const sortedProducts = products?.filter(
+        (product) => product?.stock === true
+      );
+      setFilteredProducts(sortedProducts);
+    } else {
+      console.log("hhllo");
+    }
+  };
+
   const colors = [
     { color: "bg-orange-600", name: "orange" },
     { color: "bg-pink-600", name: "pink" },
@@ -203,13 +232,17 @@ const Shop = () => {
                 </div>
                 <div className="flex items-center gap-1">
                   <span>sort By</span>
-                  <select name="" id="" className="border">
+                  <select
+                    name=""
+                    id=""
+                    className="border"
+                    onChange={(e) => handleSort(e)}
+                  >
                     <option value="">--</option>
-                    <option value="">Price: Lowest First</option>
-                    <option value="">Price: Higest First</option>
-                    <option value="">Prduct Name : A to Z</option>
-                    <option value="">In Stock</option>
-                    <option value="">Reference : Lowest First</option>
+                    <option value="lowest">Price: Lowest First</option>
+                    <option value="highest">Price: Higest First</option>
+                    <option value="ascending">Prduct Name : A to Z</option>
+                    <option value="instock">In Stock</option>
                   </select>
                 </div>
                 <div className="flex items-center gap-1">
@@ -229,7 +262,7 @@ const Shop = () => {
               <div
                 className={`${
                   showByView == "gridview"
-                    ? "grid grid-cols-3 gap-4"
+                    ? "grid grid-cols-2 md:grid-cols-3 gap-4"
                     : "flex flex-col gap-6"
                 }`}
               >
