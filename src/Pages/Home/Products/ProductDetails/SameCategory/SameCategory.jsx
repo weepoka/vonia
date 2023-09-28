@@ -72,7 +72,7 @@ const SameCategory = () => {
             keyboard={true}
             modules={[Navigation, Pagination, Mousewheel, Keyboard]}
             className="mySwiper py-12 border-b-[1px] border-[#e5e5e5]"
-            slidesPerView={4}
+            slidesPerView={slidesPerView}
             // slidesPerColumn={2}
             // slidesPerGroup={2}
             spaceBetween={20}

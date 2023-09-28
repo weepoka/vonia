@@ -50,6 +50,7 @@ const Shop = () => {
       setFilteredProducts(sortedProducts);
     } else {
       console.log("hhllo");
+      setFilteredProducts(products);
     }
   };
 
@@ -87,12 +88,12 @@ const Shop = () => {
 
   return (
     <div className="w-10/12 mx-auto  mt-5">
-      <div className="flex gap-4 items-center mb-5">
+      <div className="flex  gap-4 items-center mb-5">
         <Icon icon="ion:home-sharp" className="hover:text-pink-500" />{" "}
         <Icon icon="ic:baseline-greater-than" /> <span>Shop</span>
       </div>
-      <div className="flex gap-5">
-        <div className="w-[30%]  ">
+      <div className="flex flex-col md:flex-row gap-5">
+        <div className="md:w-[30%] w-full  ">
           <div className="bg-gray-200 p-5 mb-5">
             <h1 className="pb-5 border-b-2 pl-3 font-bold mt-4 border-gray-400 uppercase">
               Catalog
@@ -145,7 +146,7 @@ const Shop = () => {
               <h2 className="mt-4 uppercase border-b-2 font-semibold max-w-max border-gray-400 pb-1">
                 Availibility
               </h2>
-              <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
+              <p className=" flex items-center justify-between py-3 border-b-2 border-gray-300">
                 In Stock <span>(14)</span>
               </p>
             </div>
@@ -153,7 +154,7 @@ const Shop = () => {
               <h2 className="mt-4 uppercase border-b-2 font-semibold max-w-max border-gray-400 pb-1">
                 Condition
               </h2>
-              <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
+              <p className=" flex items-center justify-between py-3 border-b-2 border-gray-300">
                 New<span>(14)</span>
               </p>
             </div>
@@ -161,19 +162,19 @@ const Shop = () => {
               <h2 className="mt-4 uppercase border-b-2 font-semibold max-w-max border-gray-400 pb-1">
                 Manufacture
               </h2>
-              <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
+              <p className=" flex items-center justify-between py-3 border-b-2 border-gray-300">
                 Fashion menufacturer <span>(14)</span>
               </p>
-              <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
+              <p className=" flex items-center justify-between py-3 border-b-2 border-gray-300">
                 Adidas <span>(14)</span>
               </p>
-              <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
+              <p className=" flex items-center justify-between py-3 border-b-2 border-gray-300">
                 Chanel <span>(14)</span>
               </p>
-              <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
+              <p className=" flex items-center justify-between py-3 border-b-2 border-gray-300">
                 Dkny<span>(14)</span>
               </p>
-              <p className=" flex items center justify-between py-3 border-b-2 border-gray-300">
+              <p className=" flex items-center justify-between py-3 border-b-2 border-gray-300">
                 Dolce <span>(14)</span>
               </p>
             </div>
@@ -208,7 +209,7 @@ const Shop = () => {
             </div>
           </div>
         </div>
-        <div className="w-[70%]">
+        <div className="md:w-[70%] w-full">
           <div>
             <img src={shopBanner} className="w-full h-full" alt="" />
           </div>
@@ -218,7 +219,7 @@ const Shop = () => {
                 <h2>Bedding </h2>
                 <p>There are 13 products</p>
               </div>
-              <div className="flex justify-between items-center gap-3 my-5 p-3 border border-gray-500">
+              <div className="flex  flex-col md:flex-row md:justify-between md:items-center gap-3 my-5 p-3 border border-gray-500 text-center md:text-start">
                 <div className="flex items-center gap-1 text-[20px]">
                   <Icon
                     icon="ic:baseline-window"
@@ -253,8 +254,15 @@ const Shop = () => {
                   </select>
                   <span>per page</span>
                 </div>
-                <button className="uppercase px-3 py-2 bg-black text-white flex items-center gap-1">
-                  compare <Icon icon="ic:baseline-greater-than" />
+                <button className="uppercase px-3 py-2 bg-black text-white  text-center md:text-start items-center gap-1">
+                  <p className="flex">
+                    {" "}
+                    compare{" "}
+                    <Icon
+                      icon="ic:baseline-greater-than"
+                      className="text-center md:text-start"
+                    />
+                  </p>
                 </button>
               </div>
             </div>
@@ -262,7 +270,7 @@ const Shop = () => {
               <div
                 className={`${
                   showByView == "gridview"
-                    ? "grid grid-cols-2 md:grid-cols-3 gap-4"
+                    ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
                     : "flex flex-col gap-6"
                 }`}
               >

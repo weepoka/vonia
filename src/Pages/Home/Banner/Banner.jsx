@@ -20,8 +20,8 @@ import { Pagination, Navigation } from "swiper/modules";
 
 const Banner = () => {
   return (
-    <div className="w-10/12 mx-auto flex gap-7 mt-16">
-      <div className="w-[70%] ">
+    <div className="w-10/12 mx-auto md:flex md:gap-7 md:mt-16">
+      <div className="md:w-[70%] ">
         {/* <div>
           <img className="h-[80vh] " src={banner} alt="" />
         </div> */}
@@ -93,60 +93,70 @@ const Banner = () => {
             </button>
           </div>
         </div>
-        <div className="flex gap-3 justify-around">
+        <div className="flex flex-col sm:flex-row sm:gap-3 sm:justify-around">
           <div className="relative">
             <div className="relative hoverAnimation">
               <img src={productBanner1} className="w-full h-full" alt="" />
             </div>
-            <div className="absolute flex-col  pl-8 my-8 top-0 ">
-              <h2 className=" leading-none text-white font-bold text-[20px] uppercase">
-                FURNITURE <br />
-                <span className="w-[70px] inline-block bg-white mt-[-10px] h-[2px]"></span>
-              </h2>
-              <a
-                className="mt-32 inline-block text-[#363636] underline text-[13px]"
-                href="#"
-              >
-                SHOP NOW
-              </a>
+            <div className="absolute  left-0 md:my-8 top-0 ">
+              <div className="relative w-full h-full">
+                <h2 className="absolute top-2 left-4 leading-none text-white font-bold text-[20px] uppercase">
+                  FURNITURE <br />
+                  <span className="w-[70px] inline-block bg-white mt-[-10px] h-[2px]"></span>
+                </h2>
+                <a
+                  className=" mt-48 sm:mt-36 ml-6  inline-block text-[#363636] underline text-[13px]"
+                  href="#"
+                >
+                  SHOP NOW
+                </a>
+              </div>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative  mt-6 sm:mt-0">
             <div className="relative hoverAnimation">
               <img src={productBanner2} className="w-full h-full" alt="" />
             </div>
-            <div className="absolute flex-col  pl-8 my-8 top-0 ">
-              <h2 className=" leading-none text-white font-bold text-[20px] uppercase">
-                BATHROOM <br />
-                <span className="w-[70px] inline-block bg-white mt-[-10px] h-[2px]"></span>
-              </h2>
-              <a
-                className="mt-32 inline-block text-[#363636] underline text-[13px]"
-                href="#"
-              >
-                SHOP NOW
-              </a>
+            <div className="absolute  left-0 md:my-8 top-0 ">
+              <div className="relative w-full h-full">
+                <h2 className="absolute top-2 left-4 leading-none text-white font-bold text-[20px] uppercase">
+                  bathroom <br />
+                  <span className="w-[70px] inline-block bg-white mt-[-10px] h-[2px]"></span>
+                </h2>
+                <a
+                  className=" mt-48 sm:mt-36 ml-6  inline-block text-[#363636] underline text-[13px]"
+                  href="#"
+                >
+                  SHOP NOW
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="w-[30%]">
-        <div className=" cursor-pointer mainAnimationDiv">
-          <div href="" className="relative hoverAnimation w-full">
+      <div className="md:w-[30%] overflow-hidden">
+        <div className=" cursor-pointer  flex flex-col sm:flex-row md:block  gap-5 mt-6 md:mt-0  mainAnimationDiv">
+          <div
+            href=""
+            className="relative hoverAnimation w-full h-full sm:w-[300px] sm:h-[300px] md:h-[500px]"
+          >
             {" "}
             <img
-              className="w-full  object-cover h-[500px]"
+              className="w-full h-full   object-cover md:h-[500px]"
               src={sideBanner1}
               alt=""
             />
           </div>
-        </div>
-        <div href="" className="relative hoverAnimation">
-          <img
-            className="w-full  object-cover h-[500px]"
-            src={sideBanner2}
-            alt=""
-          />
+          <div
+            href=""
+            className="relative hoverAnimation h-full w-full sm:w-[300px] sm:h-[300px] md:h-[500px] "
+          >
+            <img
+              className="w-full h-full  object-cover md:h-[500px]"
+              src={sideBanner2}
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </div>

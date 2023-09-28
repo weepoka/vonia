@@ -13,7 +13,7 @@ const Footer = () => {
             <img src={FooterLogo} alt="" className="mx-auto py-12 " />
           </div>
           <div className="">
-            <div className="py-6 flex gap-5 text-white border-y-2 border-gray-500">
+            <div className="py-6 flex flex-col sm:flex-row text-center sm:text-start gap-5 text-white border-y-2 border-gray-500">
               <div className="w-full">
                 <h1 className="capitalize font-semibold text-[20px] mb-4">
                   Shop Location
@@ -175,7 +175,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#2f2f2f] p-16 text-white flex justify-between">
+      <div className="bg-[#2f2f2f] p-16 text-white flex flex-col sm:flex-row text-center mb-6 sm:mb-0 justify-between">
         <div className="">
           <p>
             © 2021 <strong>Vonia</strong> Made with{" "}
@@ -184,7 +184,7 @@ const Footer = () => {
             </a>
           </p>
         </div>
-        <div className="flex gap-5 items-center">
+        <div className="flex flex-col sm:flex-row text-center sm:text-start gap-5 items-center">
           <p className="hover:text-pink-500">Customer Service</p>
           <p className="hover:text-pink-500">Secure Payment</p>
           <p className="hover:text-pink-500">Term of use</p>
