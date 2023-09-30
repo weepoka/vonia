@@ -15,7 +15,34 @@ import { useEffect, useState } from "react";
 import SingleProduct from "../../../../../Components/SingleProduct/SingleProduct";
 const SameCategory = () => {
   const [products, setProducts] = useState([]);
+  const [slidesPerView, setSlidesPerView] = useState(4);
+  useEffect(() => {
+    const updateSlidesPerView = () => {
+      const screenWidth = window.innerWidth;
 
+      if (screenWidth <= 576) {
+        // Small devices
+        setSlidesPerView(1);
+      } else if (screenWidth <= 1024) {
+        // Medium devices
+        setSlidesPerView(2);
+      } else {
+        // Large devices
+        setSlidesPerView(4);
+      }
+    };
+
+    // Initial call to set initial slidesPerView
+    updateSlidesPerView();
+
+    // Listen to window resize events and update slidesPerView accordingly
+    window.addEventListener("resize", updateSlidesPerView);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", updateSlidesPerView);
+    };
+  }, [slidesPerView]);
   useEffect(() => {
     fetch("../../../../../../public/products.json")
       .then((res) => res.json())
@@ -45,7 +72,7 @@ const SameCategory = () => {
             keyboard={true}
             modules={[Navigation, Pagination, Mousewheel, Keyboard]}
             className="mySwiper py-12 border-b-[1px] border-[#e5e5e5]"
-            slidesPerView={4}
+            slidesPerView={slidesPerView}
             // slidesPerColumn={2}
             // slidesPerGroup={2}
             spaceBetween={20}

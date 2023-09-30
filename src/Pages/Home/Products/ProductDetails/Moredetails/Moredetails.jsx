@@ -19,8 +19,8 @@ class App extends Component {
   render() {
     return (
       <div className="App ">
-        <nav className="flex justify-center">
-          <ul className="flex gap-3 my-5">
+        <nav className="flex flex-col md:flex-row justify-center">
+          <ul className="flex flex-col md:flex-row text-center md:text-start gap-3 my-5">
             <li>
               <a
                 onClick={() => this.handleLinkClick("component1")}

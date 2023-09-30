@@ -9,6 +9,7 @@ import Checkout from "../Pages/Checkout/Checkout";
 import ErorrElement from "../Pages/ErorrElement/ErorrElement";
 import Cart from "../Pages/Cart/Cart";
 import Wishlist from "../Pages/Wishlist/Wishlist";
+// import LandscapeView from "../Pages/Shop/LandscapeView/LandscapeView";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
+      // {
+      //   path: "/landscapeview",
+      //   element: <LandscapeView></LandscapeView>,
+      // },
       {
         path: "/myaccount",
         element: <MyAccount />,

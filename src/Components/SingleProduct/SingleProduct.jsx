@@ -12,7 +12,7 @@ const SingleProduct = ({ product }) => {
     reviews,
   } = product;
   return (
-    <div className=" w-[280px] singleItem relative ">
+    <div className="  singleItem relative ">
       <div className=" p-1">
         <div className=" relative h-[350px]">
           <img
@@ -39,7 +39,10 @@ const SingleProduct = ({ product }) => {
             </div>
             <div>
               {" "}
-              <span className="price mr-4 font-semibold"> £ 36.00 </span>
+              <span className="price mr-4 font-semibold">
+                {" "}
+                £ {regular_price}{" "}
+              </span>
               <span className="price line-through text-[16px] text-[#999999] font-semibold">
                 {" "}
                 £ 36.00{" "}
