@@ -1,4 +1,5 @@
-import Brand from "../Brand/brand";
+// import Brand from "../Brand/Brand";
+import Brand from "../Brand/Brand";
 import FooterLogo from "../../assets/logo-footer.webp";
 import { Icon } from "@iconify/react";
 import paymentsMethodImg from "../../assets/payment-methodsIMG.webp";
