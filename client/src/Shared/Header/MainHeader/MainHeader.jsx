@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const MainHeader = () => {
   return (
     <div className="w-[83%] my-14 text-center mx-auto flex justify-around items-center gap-40">
-      <div className="text-lg  flex items-center border-b-[1px] border-[#898989] p-1">
+      <div className="text-lg hidden  md:flex items-center border-b-[1px] border-[#898989] p-1">
         <input
           className="border-none w-[100%] outline-none text-sm"
           type="text"

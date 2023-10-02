@@ -30,14 +30,14 @@ const Reviews = () => {
 
   const contentList = Reviews.map((item) => (
     <div
-      className=" py-4 px-44 flex gap-24 rounded-lg text-white mt-5"
+      className="py-2 md:py-4 px-20 md:px-44 md:flex gap-24 rounded-lg text-white mt-5"
       key={item.id}
     >
-      <div className="flex  items-center gap-5">
+      <div className="lg:flex  mb-2 items-center gap-5">
         <div>
-          <img src={item.image} alt="" />
+          <img src={item.image} alt="" className="md:w-20 md:h-20 w-10 h-10" />
         </div>
-        <div className="border-b-2 border-white pb-4">
+        <div className="border-b-2 border-white pb-2 md:pb-4">
           <p>{item.name}</p>
           <p>{item?.email}</p>
         </div>
@@ -64,12 +64,12 @@ const Reviews = () => {
 
   return (
     <div
-      className={`bg_reviwes  bg-cover bg-center relative my-10 p-4 h-[210px]`}
+      className={`bg_reviwes  bg-cover bg-center relative my-10 p-4 md:h-[210px] h-[260px]`}
       style={{ backgroundImage: `url(${bgImg})` }}
     >
       {contentList[currentIndex]}
       <div className="flex justify-center">
-        <div className="flex items-center mb-4 -ml-60">
+        <div className="flex items-center md:mb-4 -ml-60">
           {contentList.map((_, index) => (
             <button
               key={index}

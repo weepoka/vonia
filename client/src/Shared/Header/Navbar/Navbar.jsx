@@ -93,11 +93,11 @@ const Navbar = () => {
       <ul className="flex gap-5 justify-around">
         {links.map((link, idx) => (
           <li className="groupeCountry " key={idx}>
-            <Link className="uppercase" to={link.href}>
-              {link.text}
+            <Link className="uppercase" to={link?.href}>
+              {link?.text}
             </Link>
             <div className="subCountry z-20 bg-white  flex w-[400px] shadow-2xl justify-between">
-              {link.subcategories.map((item, subIdx) => (
+              {link?.subcategories?.map((item, subIdx) => (
                 <div className="subcategory p-7 " key={subIdx}>
                   <h1 className="font-semibold mb-2 text-black">{item.text}</h1>
                   <div className="flex flex-col gap-2">

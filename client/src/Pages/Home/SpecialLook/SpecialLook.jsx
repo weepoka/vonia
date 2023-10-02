@@ -20,9 +20,9 @@ const SpecialLook = () => {
           </div>
         </div>
       </div>
-      <div className="flex">
-        <div className="relative hoverAnimation">
-          <img src={SpecialLook1} alt="" />
+      <div className="md:flex">
+        <div className="relative hoverAnimation ">
+          <img src={SpecialLook1} alt="" className="w-full md:object-contain" />
         </div>
         <div>
           <div className="relative hoverAnimation">
