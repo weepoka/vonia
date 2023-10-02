@@ -56,9 +56,9 @@ const ProductDetails = () => {
         <Icon icon="ic:baseline-greater-than" /> <span>Furniture</span>{" "}
         <Icon icon="ic:baseline-greater-than" /> <span>{product?.title}</span>
       </div>
-      <div className="flex gap-5 my-5">
-        <div className="w-[40%]">
-          <div className="h-[700px]">
+      <div className="flex flex-col md:flex-row gap-5 my-5">
+        <div className="md:w-[40%] w-full">
+          <div className="md:h-[700px]">
             <ImageGallery
               showPlayButton={false}
               slideOnThumbnailOver={true}
@@ -71,7 +71,7 @@ const ProductDetails = () => {
             ></ImageGallery>
           </div>
         </div>
-        <div className="w-[60%]">
+        <div className="md:w-[60%] w-full">
           <h2 className="text-[30px] font-semibold pb-3">
             Faded Short Sleeves T-shirt
           </h2>
@@ -111,8 +111,8 @@ const ProductDetails = () => {
           </p>
           <div className="flex items-center gap-3">
             <p>quantity</p>
-            <div className="w-[50px] mr-44">
-              <input type="number" className="px-4 py-2 " />
+            <div className="w-[100px] ">
+              <input type="number" className="px-4 py-2 w-full border " />
             </div>
             <span className="p-2 border px-4 py-2 hover:bg-[#7d7d7d] hover:text-white">
               -
@@ -120,7 +120,7 @@ const ProductDetails = () => {
             <span className="p-2 border px-4 py-2 hover:bg-[#7d7d7d] hover:text-white">
               +
             </span>
-            <button className="uppercase px-4 py-2 flex items-center gap-3 border border-gray bg-black text-white hover:bg-[#c06b81] font-bold">
+            <button className="uppercase  md:px-4 py-2 flex items-center gap-3 border border-gray bg-black text-white hover:bg-[#c06b81] font-bold">
               <Icon icon="system-uicons:cart" className="text-[35px]" />
               Add to cart
             </button>

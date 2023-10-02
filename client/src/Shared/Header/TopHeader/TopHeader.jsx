@@ -12,8 +12,8 @@ const TopHeader = () => {
   return (
     <div className=" flex items-center bg-black text-white  border-2 border-gray-50">
       <div className="w-10/12  mx-auto flex justify-between items-center">
-        <div>
-          <p className="text-[13px] flex items-center justify-center gap-2">
+        <div className="">
+          <p className="text-[13px] hidden  md:flex items-center justify-center gap-2">
             {" "}
             <Icon icon="mdi:truck-delivery" className="text-[20px]" />
             FREE SHIPPING ON ORDERS OVER $49
