@@ -6,7 +6,7 @@ import shopBanner from "../../assets/bedding.webp";
 import SingleProduct from "../../Components/SingleProduct/SingleProduct";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
-import SingleLandscapeView from "./SingleLandscapeView.jsx/SingleLandscapeView";
+// import SingleLandscapeView from "./SingleLandscapeView.jsx/SingleLandscapeView";
 
 const Shop = () => {
   const [showByView, setshowByView] = useState("gridview");
